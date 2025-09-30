@@ -1,0 +1,19 @@
+{
+  "name": "qr-attendance-tracker",
+  "version": "1.0.0",
+  "description": "QR code based attendance tracking with offline support",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": ["qr-code", "attendance", "offline", "pwa"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

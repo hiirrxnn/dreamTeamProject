@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code for Testing</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+    <h1>QR Code for Testing Attendance</h1>
+    <div id="qrcode"></div>
+    <p><strong>Event:</strong> Test Event for QR Attendance</p>
+    <p><strong>Event ID:</strong> test-event-001</p>
+    <p><strong>Instructions:</strong> Scan this QR code with the attendance app at http://localhost:3000</p>
+    
+    <script>
+        const qrData = {
+            eventId: "test-event-001",
+            eventName: "Test Event for QR Attendance",
+            timestamp: new Date().toISOString(),
+            type: "attendance"
+        };
+        
+        QRCode.toCanvas(document.getElementById('qrcode'), JSON.stringify(qrData), {
+            width: 300,
+            margin: 2
+        }, function (error) {
+            if (error) console.error(error);
+            console.log('QR code generated successfully!');
+        });
+    </script>
+</body>
+</html>
